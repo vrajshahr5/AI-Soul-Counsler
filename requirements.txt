@@ -14,7 +14,6 @@ python-jose==3.3.0
 # AI and Langchain
 langchain==0.2.14
 langchain-community==0.2.12
-langchain-core==0.2.20
 langchain-openai==0.1.7
 
 
