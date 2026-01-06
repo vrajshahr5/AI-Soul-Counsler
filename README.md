@@ -40,7 +40,8 @@ Chat Flow
 7) Response stored and returned
 
 Backend Archeticture
--![IMG_3573 2](https://github.com/user-attachments/assets/17e2b87e-527c-4af2-83de-64b833aea70a)
+![IMG_3580](https://github.com/user-attachments/assets/61f5830e-c25d-44e4-9e5d-311f283aa435)
+
 
 Design Priciples 
 -
@@ -77,8 +78,14 @@ Deployment
 + Containerized with Docker
 + Hosted on Render Web Service
 + Enviornment configured with PostgreSQL Lite and ChromaDB
-+ Live API accessible at https://ai-soul-counsler.onrender.com/
-+ 
++ Live API accessible at: https://ai-soul-counsler.onrender.com/
+
+API Documentation
+-
+The FastAPI backend provides an interactive Swagger UI for live endpoint testing at /docs. Authentication is supported directly in Swagger using JWT Bearer tokens.
+
+
+  
 
 
 
