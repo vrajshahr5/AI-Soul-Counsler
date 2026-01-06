@@ -1,184 +1,84 @@
 AI Soul Counselor
+-
+AI Soul Counselor is a production-grade, backend-first AI system that creates a personalized AI companion for each user, combining Retrieval-Augmented Generation (RAG), long-term memory, and configurable personality profiles.Each user interacts with a private AI Soul that evolves over time through stored memory and personalized prompt injection.
 
-AI Soul Counselor is a production-grade, backend-first AI system that creates a personalized AI companion for each user, combining Retrieval-Augmented Generation (RAG), long-term memory, and configurable personality profiles.
+Problem Statement
+-
+Long term context is critical for individuals looking for AI assisted coaching or counseling. This long term ontext relates to recurring concerns and worries, established goals and objectives, and a user's customized preferences. Most chat systems of LLMs operate only on a session basis without any saved information. As a result, those chat systems cannot allow for secure integration of user emotional context from previous chats and therefore hinder progress through consecutive conversations. 
 
-Each user interacts with a private AI Soul that evolves over time through stored memory and personalized prompt injection.
+AI Soul Counselor was created to solve this exact problem 
+- 
++ Structured long term conversation memory
++ Deterministic personality enforcement
++ Strict per-user data isolation
 
-🚀 Core Capabilities
+Core Capabilites 
++ Per-user AI Soul with independent memory evolution
++ Retrieval-Augmented Generation powered by OpenAI embeddings
++ Private ChromaDB vector stores per account
++ JWT-authenticated API with OAuth2 Bearer security
++ Password hasing and protected route enforcement
++ Conversation History in PostSQL Lite
++ Dockerized deployment for cloud platforms
++ FastAPI architecture
 
-Per-user AI Souls with long-term memory
+RAG with Per-User Memory Isolation
+-
+All conversations are stored in a relational database and mirrored into ChromaDB as embeddings. Retrieval is only executed with authenticated user scope, which ensures privacy and Independent companions.
 
-Retrieval-Augmented Generation (RAG) using user-specific vector databases
+Chat Flow
+-
+1) User authentication
+2) Message saved to SQL database
+3) Embedding generated and stored
+4) Relevant memories retrieved
+5) Prompt constructed using:
+   + persisted personality settings
+   + Retrieved Historical context
+   + Current user input
+6) LLM generates response
+7) Response stored and returned
 
-JWT-authenticated API with protected routes
+Backend Archeticture
+-![IMG_3573 2](https://github.com/user-attachments/assets/17e2b87e-527c-4af2-83de-64b833aea70a)
 
-Configurable AI personalities persisted per user
+Design Priciples 
+-
++ Modular routers with dependency layer security
++ SQLAchemy ORM and Alembic migrations
++ Service oriented AI integration
++ Extensible OpenAPI schema
 
-Production-ready FastAPI architecture
-
-Dockerized deployment
-
-🧠 Personalized AI Souls
-
-Each user has a unique AI Soul whose behavior is defined by stored personality settings:
-
-Tone (gentle, casual, formal, humorous)
-
-Empathy level
-
-Reasoning depth
-
-Creativity level
-
-Memory aggressiveness
-
-Behavioral boundaries
-
-These settings are injected into every LLM prompt, ensuring consistent and personalized responses.
-
-🧠 RAG with Per-User Memory Isolation
-
-Each user has a private ChromaDB vector store
-
-Messages are:
-
-Embedded
-
-Stored in the user’s vector database
-
-Retrieved during future conversations for contextual grounding
-
-This guarantees:
-
-No cross-user data leakage
-
-Independent memory evolution per user
-
-Scalable memory architecture
-
-🔐 Security & Authentication
-
-JWT-based authentication (OAuth2 Bearer)
-
-Password hashing
-
-Protected routes enforced at the dependency layer
-
-Swagger UI authentication enabled
-
-Protected endpoints require a valid token.
-
-💬 AI Chat Flow
-
-User authenticates
-
-Message is saved to SQL database
-
-Message is embedded and stored in vector memory
-
-Relevant memories are retrieved
-
-Prompt is built using:
-
-Personality settings
-
-Retrieved memories
-
-User input
-
-LLM generates response
-
-Response is stored and returned
-
-🧱 Backend Architecture
-
-FastAPI with modular routers
-
-SQLAlchemy ORM + Alembic migrations
-
-Clean separation of concerns:
-
-Auth
-
-Chat
-
-History
-
-Soul settings
-
-Custom OpenAPI schema
-
-CORS-enabled
-
-Designed for horizontal scalability
-
-⚙️ Tech Stack
+Technology Stack
+-
 Backend
+-
++ FastAPI
++ SQLAlchemy
++ Alembic
++ Pydantic
++ Uvicorn
 
-FastAPI
-
-SQLAlchemy
-
-Alembic
-
-Pydantic
-
-Uvicorn
-
-AI / ML
-
-LangChain
-
-OpenAI
-
-ChromaDB
-
-Vector embeddings & retrieval
+AI/ML
+-
++ Langchain
++ OpenAI
++ ChromaDB
++ Vector embeddings & RAG
 
 Security
-
-JWT (OAuth2 Bearer)
-
-Password hashing
-
-Protected routes
+-
++ OAuth2 Bearer JWT
++ Protected routes
++ Paswword Hashing
 
 Deployment
-
-Docker
-
-Render
-
-AWS EC2 (compatible)
-
-Railway (compatible)
-
-🧪 API Documentation
-
-Interactive Swagger UI available at:
-
-/docs
-
-
-After authentication, all protected endpoints can be tested directly.
-
-🎯 Skills Demonstrated
-
-Backend system design
-
-REST API architecture
-
-Secure authentication
-
-Retrieval-Augmented Generation (RAG)
-
-Per-user vector memory systems
-
-Prompt engineering
-
-Scalable AI infrastructure
-
-Production deployment with Docker
+- 
++ Containerized with Docker
++ Hosted on Render Web Service
++ Enviornment configured with PostgreSQL Lite and ChromaDB
++ Live API accessible at https://ai-soul-counsler.onrender.com/
++ 
 
 
 
