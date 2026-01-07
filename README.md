@@ -83,6 +83,11 @@ Deployment
 API Documentation/Example
 -
 The FastAPI backend provides an interactive Swagger UI for live endpoint testing at /docs. Authentication is supported directly in Swagger using JWT Bearer tokens.
+The publicly deployed API dcoumentation can be accessed at https://ai-soul-counsler.onrender.com/docs, Use this link to explore and test all avaliable endpoints directly from your browser.
+
+Local Development Documentation
+-
+After Running the server locally, the same documentation is avaliable at: http://127.0.0.1:8000/docs
 
 #### Example cURL Request
 
@@ -101,8 +106,6 @@ curl -X 'POST' \
   "user_id": 24,
   "metadata": null
 }
-
----
 
 ### Response Codes
 
