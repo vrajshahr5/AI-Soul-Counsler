@@ -43,7 +43,7 @@ Backend Archeticture
 ![IMG_3580](https://github.com/user-attachments/assets/61f5830e-c25d-44e4-9e5d-311f283aa435)
 
 
-Design Priciples 
+Design Principles
 -
 + Modular routers with dependency layer security
 + SQLAchemy ORM and Alembic migrations
